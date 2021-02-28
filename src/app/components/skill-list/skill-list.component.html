@@ -1,0 +1,23 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>List of skills</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Skill name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let skill of skills | async">
+            <td>{{skill.skillName}}</td>
+            <td><button (click)="deleteSkill(skill.skillName)" class="btn btn-danger">Delete</button>
+                <!-- <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Details</button> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+

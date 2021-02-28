@@ -1,0 +1,53 @@
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>List of job candidates</h2>
+    </div>
+    <div>
+       <ul class="list-group list-group-horizontal">
+        <li class="list-group-item">
+            <form class="form-inline waves-light" mdbWavesEffect>
+                <div class="md-form my-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search candidate by name">
+                </div>
+              </form>
+          </li>
+          <li class="list-group-item">
+            <button type="submit" class="btn btn-info">Search by name</button>
+          </li>
+          <li class="list-group-item">
+            <form class="form-inline waves-light" mdbWavesEffect>
+                <div class="md-form my-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search candidate by skill">
+                </div>
+              </form>
+          </li>
+          <li class="list-group-item">
+            <button type="submit"  class="btn btn-info">Search by skill</button>
+          </li>
+       </ul>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let candidate of candidates | async">
+            <td>{{candidate.firstName}}</td>
+            <td>{{candidate.lastName}}</td>
+            <td>{{candidate.email}}</td>
+            <td><button (click)="deleteCandidate(candidate.email)" class="btn btn-danger">Delete</button>
+                <!-- <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Details</button> -->
+            </td>
+            <td><button (click)="viewCandidateDetails(candidate.candidateId)" class="btn btn-info">Details</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

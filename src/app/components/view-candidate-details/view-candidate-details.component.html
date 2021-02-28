@@ -1,0 +1,27 @@
+<div *ngIf="candidate" class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Date of birth</th>
+          <th>Contact number</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{candidate.firstName}}</td>
+          <td>{{candidate.lastName}}</td>
+          <td>{{candidate.dateOfBirth}}</td>
+          <td>{{candidate.contactNumber}}</td>
+          <td>{{candidate.email}}</td>
+          
+          <td><button class="btn btn-danger">Add skill</button>
+          </td>
+          <td><button class="btn btn-primary">Remove skill</button>
+        </tr>
+      </tbody>
+    </table>
+  </div>
